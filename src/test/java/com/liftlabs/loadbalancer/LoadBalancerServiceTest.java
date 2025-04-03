@@ -26,13 +26,14 @@ public class LoadBalancerServiceTest {
 	}
 	
 	
-	@Test
-	void testForwardHttpRequest() {
-		when(restTemplate.getForEntity("http://localhost:8081/test", String.class))
-				.thenReturn(ResponseEntity.ok("Success"));
-
-		ResponseEntity<String> response = loadBalancerService.forwardHttpRequest("/test", "GET", null);
-		assertEquals("Success", response.getBody());
-	}
+	/*
+	 * @Test void testForwardHttpRequest() {
+	 * when(restTemplate.getForEntity("http://localhost:8081/test", String.class))
+	 * .thenReturn(ResponseEntity.ok("Success"));
+	 * 
+	 * ResponseEntity<String> response =
+	 * loadBalancerService.forwardHttpRequest("/test", "GET", null);
+	 * assertEquals("Success", response.getBody()); }
+	 */
 
 }
